@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    {% for post in posts %}
+        <article class="media content-section">
+            <div class="media-body">
+            <div class="article-metadata">
+                <label class="text-muted">{{ post.user.username }}</label>
+                <p>{{ post.user.profile.nickname }}</p>
+
+            </div>
+            <h2>
+                <img class="rounded-circle account-img" src="{{ post.user.profile.image.url }}">
+                <label class="article-title" href="#">{{ post.user.profile.nickname }} Has Been Created!</label></h2>
+            </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
